@@ -22,13 +22,24 @@ $stmt = $pdo->prepare("
     SELECT *
     FROM team_members
     WHERE is_active = 1
-    ORDER BY category, display_order ASC, created_at ASC
+    ORDER BY 
+        FIELD(category,
+            'Founders & CEO',
+            'Management',
+            'Developers',
+            'Designers',
+            'Graphics Team',
+            'Marketing',
+            'Others'
+        ),
+        display_order ASC,
+        created_at ASC
 ");
 
 $stmt->execute();
 $teamMembers = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-/* Group by category */
+/* Group members by category */
 $teams = [];
 
 foreach ($teamMembers as $member) {
