@@ -3493,7 +3493,7 @@ body {
 ====================================== */
 
 #enquiries.content-section {
-    position: fixed;
+    /* position: fixed; */
     top: 70px;                 /* height of admin header */
     /* left: 260px;             */
     right: 0;
@@ -3508,10 +3508,7 @@ body {
     box-sizing: border-box;
 }
 
-/* prevent body scrolling */
-body {
-    overflow: hidden;
-}
+
 
 /* keep table wide */
 #enquiries .table-container {
