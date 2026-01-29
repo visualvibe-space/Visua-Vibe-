@@ -725,6 +725,25 @@ try {
         font-size: 2.5rem;
     }
 }
+/* Make all cards same height */
+.portfolio-item {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Keep content aligned */
+.portfolio-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Push button to bottom */
+.portfolio-content .explore-btn {
+    margin-top: auto;
+}
+
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -845,7 +864,7 @@ try {
 
                 <?php foreach ($websites as $site): ?>
 
-                    <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="col-lg-4 col-md-6 mb-4 d-flex">
 
                         <div class="portfolio-item">
 
