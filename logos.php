@@ -981,8 +981,8 @@ $logos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </section>
     
    <!-- Portfolio Section -->
-<section id="portfolio" class="portfolio-section">
-    <div class="container-fluid">
+   <section id="portfolio" class="portfolio-section">
+    <div class="container">
 
         <h2 class="section-title">Our Logo Designs</h2>
         <p class="section-subtitle">
@@ -991,53 +991,37 @@ $logos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         <?php if (!empty($logos)): ?>
 
-            <?php
-            $count = 0;
-            foreach ($logos as $logo):
+            <div class="row">
 
-                if ($count % 3 === 0):
-            ?>
-                <div class="portfolio-item">
-                    <div class="row">
-            <?php endif; ?>
+                <?php foreach ($logos as $logo): ?>
 
-                <div class="col-md-4 mb-4">
+                    <div class="col-lg-4 col-md-6 mb-4">
 
-                    <div class="logo-image-container">
-                        <div class="logo-bg"></div>
+                        <div class="portfolio-item">
 
-                        <img
-                            src="<?= htmlspecialchars($logo['image_url']) ?>"
-                            alt="<?= htmlspecialchars($logo['title']) ?>"
-                            class="logo-image"
-                            data-full="<?= htmlspecialchars($logo['image_url']) ?>"
-                        >
+                            <div class="logo-image-container">
+                                <div class="logo-bg"></div>
+
+                                <img
+                                    src="<?= htmlspecialchars($logo['image_url']) ?>"
+                                    alt="<?= htmlspecialchars($logo['title']) ?>"
+                                    class="logo-image"
+                                    data-full="<?= htmlspecialchars($logo['image_url']) ?>"
+                                >
+                            </div>
+
+                            <div class="portfolio-content">
+                                <h3><?= htmlspecialchars($logo['title']) ?></h3>
+                                <p><?= htmlspecialchars($logo['description']) ?></p>
+                            </div>
+
+                        </div>
+
                     </div>
 
-                    <div class="portfolio-content">
-                        <h3><?= htmlspecialchars($logo['title']) ?></h3>
-                        <p><?= htmlspecialchars($logo['description']) ?></p>
+                <?php endforeach; ?>
 
-                        <!-- <a href="<?= htmlspecialchars($logo['image_url']) ?>" class="explore-btn">
-                            <i class="fas fa-eye"></i> View Full Size
-                        </a>
-                    </div> -->
-
-                </div>
-
-            <?php
-                $count++;
-
-                if ($count % 3 === 0):
-            ?>
-                    </div>
-                </div>
-            <?php endif; endforeach; ?>
-
-            <?php if ($count % 3 !== 0): ?>
-                    </div>
-                </div>
-            <?php endif; ?>
+            </div>
 
         <?php else: ?>
 
@@ -1049,6 +1033,7 @@ $logos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     </div>
 </section>
+
 
 
 
