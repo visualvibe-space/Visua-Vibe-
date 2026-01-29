@@ -832,10 +832,7 @@ try {
     
         <!-- Portfolio Section -->
         <section id="portfolio" class="portfolio-section">
-            <!-- Your existing portfolio content -->
-   <!-- Website Portfolio Section -->
-<section id="portfolio" class="portfolio-section">
-    <div class="container-fluid">
+    <div class="container">
 
         <h2 class="section-title">Our Website Portfolio</h2>
         <p class="section-subtitle">
@@ -844,17 +841,13 @@ try {
 
         <?php if (!empty($websites)): ?>
 
-            <?php
-            $count = 0;
-            foreach ($websites as $site):
+            <div class="row">
 
-                if ($count % 3 === 0):
-            ?>
-                <div class="portfolio-item">
-                    <div class="row">
-            <?php endif; ?>
+                <?php foreach ($websites as $site): ?>
 
-                        <div class="col-md-4 mb-4">
+                    <div class="col-lg-4 col-md-6 mb-4">
+
+                        <div class="portfolio-item">
 
                             <img 
                                 src="<?= htmlspecialchars($site['image_url']) ?>" 
@@ -878,19 +871,11 @@ try {
 
                         </div>
 
-            <?php
-                $count++;
-
-                if ($count % 3 === 0):
-            ?>
                     </div>
-                </div>
-            <?php endif; endforeach; ?>
 
-            <?php if ($count % 3 !== 0): ?>
-                    </div>
-                </div>
-            <?php endif; ?>
+                <?php endforeach; ?>
+
+            </div>
 
         <?php else: ?>
 
@@ -902,6 +887,7 @@ try {
 
     </div>
 </section>
+
 
     
 
