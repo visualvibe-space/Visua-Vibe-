@@ -1666,6 +1666,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['edit_admin_link'])) {
         color: var(--text);
         line-height: 1.6;
         overflow-x: hidden;
+        overflow-y: auto;
         font-size: 14px;
     }
     
