@@ -1810,6 +1810,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['edit_admin_link'])) {
         min-height: 100vh;
         display: flex;
         flex-direction: column;
+        overflow-y: auto;
+        padding: 20px;
     }
     
     /* Top Bar */
