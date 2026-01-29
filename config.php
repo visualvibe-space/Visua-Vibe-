@@ -4,10 +4,10 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-$host = "localhost:3308";
-$dbname = "visual_vibe_db";
-$username = "root";
-$password = "";
+$host = "localhost";
+$dbname = "u677332555_visual_vibe_db";
+$username = "u677332555_visual_vibe";
+$password = "Visualvibe65467013";
 
 try {
     $pdo = new PDO(
