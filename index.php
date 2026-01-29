@@ -22,16 +22,16 @@ $stmt = $pdo->prepare("
     SELECT *
     FROM team_members
     WHERE is_active = 1
-    ORDER BY 
-        FIELD(category,
-            'Founders & CEO',
-            'Management',
-            'Developers',
-            'Designers',
-            'Graphics Team',
-            'Marketing',
-            'Others'
-        ),
+    ORDER BY
+        CASE
+            WHEN category = 'Founders & CEO' THEN 1
+            WHEN category = 'Head of Operations' THEN 2
+            WHEN category = 'Research and Development' THEN 3
+            WHEN category = 'Developers' THEN 4
+            WHEN category = 'Graphics Team' THEN 5
+            WHEN category = 'Marketing Team' THEN 6
+            ELSE 99
+        END,
         display_order ASC,
         created_at ASC
 ");
@@ -39,7 +39,7 @@ $stmt = $pdo->prepare("
 $stmt->execute();
 $teamMembers = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-/* Group members by category */
+/* Group by category */
 $teams = [];
 
 foreach ($teamMembers as $member) {
