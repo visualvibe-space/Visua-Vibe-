@@ -876,10 +876,10 @@ $logos = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <span class="hamburger"></span>
             </button>
             <div class="nav-links">
-                <a href="index.html">Home</a>
+                <a href="index.php">Home</a>
                 <a href="#portfolio">Portfolio</a>
-                <a href="index.html #contact">Contact</a>
-                <a href="index.html #enquiry">Enquiry</a>
+                <a href="index.php #contact">Contact</a>
+                <a href="index.php #enquiry">Enquiry</a>
             </div>
         </div>
     </nav>
